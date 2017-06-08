@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Học Git cơ bản - Sử dụng git cơ bản - Pymi.vn</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">Sử dụng git cơ bản - Pymi.vn</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Học Git <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li class="active">
+    <a href="./">Học Git cơ bản</a>
+</li>
+                            
+<li >
+    <a href="../introduction_to_git_GUI/">Hướng dẫn sử dụng Git với Windows</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="..">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../introduction_to_git_GUI/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/pymivn/vinagit">
+                                <i class="fa fa-github"></i>GitHub
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#huong-dan-co-ban-ve-git-cho-nguoi-moi-bat-au">Hướng dẫn cơ bản về git cho người mới bắt đầu</a></li>
+            <li><a href="#git-la-gi-tai-sao-lai-su-dung-git">Git là gì? Tại sao lại sử dụng git?</a></li>
+            <li><a href="#tien-hanh-cai-at-git">Tiến hành cài đặt git</a></li>
+            <li><a href="#1-so-thao-tac-co-ban-khi-su-dung-git-github">1 số thao tác cơ bản khi sử dụng Git - Github</a></li>
+            <li><a href="#huong-dan-nop-bai-tap-qua-git-cho-hoc-vien-pyfml">Hướng dẫn nộp bài tập qua git cho học viên PyFML</a></li>
+            <li><a href="#phu-luc">Phụ lục</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h2 id="huong-dan-co-ban-ve-git-cho-nguoi-moi-bat-au">Hướng dẫn cơ bản về git cho người mới bắt đầu</h2>
+<hr />
+<h3 id="git-la-gi-tai-sao-lai-su-dung-git"><strong>Git là gì? Tại sao lại sử dụng git?</strong></h3>
+<ul>
+<li>
+<p>Thứ nhất, Git là 1 hệ thống quản lí phiên bản phân tán (DVCS - Distributed Version Control System) ??? Nhưng hiểu thế nào là 1 hệ thống quản lí phiên bản, rồi lại phân tán gì ở đây? Để đơn giản có thể hiểu DVCS là hệ thống lưu trữ các tập tin ( file, thư mục, ...) theo thời gian, tương ứng với nhiều phiên bản khác nhau của các tập tin đó, và bạn hoàn toàn có thể quay lại 1 phiên bản xác định nào đó sau này, xem lại các thay đổi thực hiện theo thời gian hay làm việc trên nhiều <code>nhánh</code> khác nhau của 1 dự án ! Nghe thật kì diệu phải ko?</p>
+</li>
+<li>
+<p>Vậy tại sao lại sử dụng git? Có lẽ mình sẽ lấy 1 ví dụ cho các bạn dễ hình dung</p>
+</li>
+</ul>
+<blockquote>
+<p>Vào 1 ngày đẹp trời, 2 anh A và B cùng bắt tay vào thực hiện 1 dự án (xây dựng 1 website eCommerce cho khách hàng chẳng hạn). Tất nhiên, khối lượng công việc khá nhiều nên 2 người chia nhau làm các chức năng hay feature cho dự án đó. Bạn cứ thử tưởng tượng mà xem, anh A viết code rồi gửi cho anh B, anh B viết code rồi gửi cho anh A, vậy bạn nghĩ họ sẽ làm thế nào để có thể <code>có được</code> code của nhau để tiếp tục phát triển dự án. Có thể họ sẽ gửi file qua email hay lên paste code lên đâu đó rồi share link cho nhau ?? Lúc đó nảy sinh 1 vấn đề, giả sử anh A vô tình viết sai code dẫn đến phần mềm bị lỗi, gỡ lỗi mãi chưa được hoặc chỉ đơn giản là quay lại đoạn code trước mà anh ta thấy tối ưu hơn chẳng hạn thì giờ làm thế nào? Chắc chắn là không được và cứ thế, 2 người lại tiếp tục xây dựng lại tính năng đó và tiếp tục gửi code cho nhau như vậy !</p>
+</blockquote>
+<ul>
+<li>
+<p>Có lẽ đọc mẩu chuyện ngắn bên trên, bạn cũng sẽ hiểu được 1 số vấn đề mà 2 anh A và B gặp phải:</p>
+<ul>
+<li>
+<p>Việc gửi code qua email hay share link code cho nhau rất rất tốn thời gian.</p>
+</li>
+<li>
+<p>Không theo dõi được tiến độ của dự án hoặc những thay đổi của người trong 1 nhóm vào sản phẩm.</p>
+</li>
+<li>
+<p>Code ko được sao lưu và cập nhật thường xuyên khiến cho việc quay lại các phiên làm việc trước đó hết sức khó khăn</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Và đó chính là các vấn đề mà git có thể giải quyết 1 cách đơn giản chỉ bằng 1 vài dòng lệnh !</p>
+</li>
+</ul>
+<hr />
+<h3 id="tien-hanh-cai-at-git"><strong>Tiến hành cài đặt git</strong></h3>
+<p><strong>1. Trên Linux:</strong></p>
+<ul>
+<li>Ubuntu: <code>sudo apt-get install git</code></li>
+</ul>
+<p><strong>2. Trên Window:</strong></p>
+<ul>
+<li>Trên window thì việc cài đặt sẽ khó khăn hơn 1 chút, để đơn giản. bạn truy cập  vào đường dẫn: <a href="https://www.git-scm.com/downloads">https://www.git-scm.com/downloads</a> và tại về bản git dành cho window bao gồm cả giao diện đồ họa GUI và terminal.</li>
+</ul>
+<hr />
+<h3 id="1-so-thao-tac-co-ban-khi-su-dung-git-github"><strong>1 số thao tác cơ bản khi sử dụng Git - Github</strong></h3>
+<ul>
+<li>
+<p>Nếu bạn dùng window thì có thể xem tài liệu hướng dẫn sử dụng git với Window</p>
+</li>
+<li>
+<p>Việc đầu tiên cần làm sau khi cài đặt git đó là thiết lập các thông số cấu hình ban đầu của git trên máy, bao gồm <code>username</code> và <code>email</code> của bạn. Trên terminal các bạn gõ lần lượt từng lệnh:</p>
+</li>
+</ul>
+<pre><code>git config --global user.name &quot;Your name&quot;
+git config --global user.email &quot;youremail@gmail.com&quot;
+</code></pre>
+
+<h6 id="1-cac-thao-tac-co-ban"><strong>1. Các thao tác cơ bản:</strong></h6>
+<ul>
+<li>Tiếp sau đó, bạn cần tạo <code>repository</code>hay <code>thư mục chứa code</code>, nơi sẽ lưu giữ toàn bộ mã nguồn của bạn. Trên terminal, bạn tạo ra 1 thư mục trên máy là truy cập vào thư mục đó:</li>
+</ul>
+<pre><code>mkdir test_repo  # lệnh tạo thư mục
+cd test_repo  # truy cập vào thư mục test_repo
+</code></pre>
+
+<ul>
+<li>Trong thư mục <code>test_repo</code>, bạn thực hiện lệnh:</li>
+</ul>
+<pre><code>git init
+</code></pre>
+
+<p>Lệnh này sẽ khởi tạo 1 thư mục <code>.git</code>bên trong thư mục làm việc cuả bạn, là nơi chứa các thiết lập về git cũng như thông tin về kho chứa. Bạn có thể thấy 1 thông báo rằng đã khởi tạo 1 kho chứa thành công</p>
+<pre><code>(venv) ╭─phanhoang@phanhoang-PC ~/workspace  
+╰─➤  mkdir test_repo
+(venv) ╭─phanhoang@phanhoang-PC ~/workspace  
+╰─➤  cd test_repo 
+(venv) ╭─phanhoang@phanhoang-PC ~/workspace/test_repo  
+╰─➤  git init   
+Initialized empty Git repository in /home/phanhoang/workspace/test_repo/.git/
+(venv) ╭─phanhoang@phanhoang-PC ~/workspace/test_repo  ‹master› 
+╰─➤  ls -a
+.  ..  .git
+</code></pre>
+
+<ul>
+<li>Giờ bạn sẽ tạo mới 1 file ( hoặc thư mục ) tùy ý và thực hiện lệnh <code>git status</code></li>
+</ul>
+<pre><code>(venv) ╭─phanhoang@phanhoang-PC ~/workspace/test_repo  ‹master› 
+╰─➤  touch README.md
+(venv) ╭─phanhoang@phanhoang-PC ~/workspace/test_repo  ‹master*› 
+╰─➤  git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+
+        README.md
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+</code></pre>
+
+<ul>
+<li>Như bạn có thể thấy, sau khi bạn tạo mới 1 file trên thư mục làm việc sẽ có 1 thông báo xuất ra màn hình báo <code>file chưa được theo dõi</code>( dòng README.md sẽ hiện màu đỏ ), giả sử bạn xóa file này đi thì git cũng không quan tâm. Hiểu đơn giản, git quản lí tập tin nên nếu bạn thay đổi hay tạo mới bất cứ 1 file ( hay thư mục ) mà chưa thông báo cho git thì mọi thay đổi trên file ( thư mục ) đó git sẽ chưa thể quản lí ( theo dõi ) được. Để cập nhật file ( thư mục ) đã được thay đổi, trên terminal các bạn thực  hiện lệnh <code>git add tên_file</code> , rồi <code>git status</code>:</li>
+</ul>
+<pre><code>(venv) ╭─phanhoang@phanhoang-PC ~/workspace/test_repo  ‹master*› 
+╰─➤  git add README.md 
+(venv) ╭─phanhoang@phanhoang-PC ~/workspace/test_repo  ‹master*› 
+╰─➤  git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
+
+        new file:   README.md
+</code></pre>
+
+<ul>
+<li>Bạn có để ý thấy điều gì ko? Git báo file đã được cập nhật và có 1 file mới <code>README.md</code>  màu xanh.  Tuy nhiên, khi thực hiện <code>git add tên_file</code>ta mới thông báo cho git là file đã đc cập nhật nhưng chưa hề được đánh dấu version ( hay các phiên làm việc ). Để làm được điều đó, ta thực hiện lệnh <code>git commit -m "tên lời nhắn"</code>:</li>
+</ul>
+<pre><code>(venv) ╭─phanhoang@phanhoang-PC ~/workspace/test_repo  ‹master*› 
+╰─➤  git commit -m 'add README.md'
+[master (root-commit) 43e1e93] add README.md
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 README.md
+(venv) ╭─phanhoang@phanhoang-PC ~/workspace/test_repo  ‹master› 
+╰─➤  git status
+On branch master
+nothing to commit, working directory clean
+</code></pre>
+
+<ul>
+<li>
+<p><code>Tên lời nhắn</code>chính là thao tác bạn vừa thực hiện trên thư mục đó. Lời nhắn nên để ở thì hiện tại đơn và nên ngắn gọn, dễ hiểu. Xong khi thực hiện <code>commit</code>, ta thấy git tạo ra 1 mã hashcode <code>[master (root-commit) 43e1e93] add README.md</code> kèm theo đó là tên lời nhắn vừa thực hiện. Gõ <code>git status</code>thì git báo chưa có gì để cập nhật hay hiện tại chưa có bất kì 1 sự thay đổi nào trong thư mục làm việc !</p>
+</li>
+<li>
+<p>Để xem lại các commit trước, bạn thực hiện lệnh <code>git log</code>:</p>
+</li>
+</ul>
+<pre><code>commit 43e1e9398960d2d686bae38a05c269152228b157
+Author: huyhoang17 &lt;hoangphan0710@gmail.com&gt;
+Date:   --- --- - --:--:-- ---- +0700
+
+    add README.md
+(END)
+</code></pre>
+
+<ul>
+<li>Bạn có để ý thấy 7 kí tự đầu trên mã hashcode và tên commit tương ứng như lúc nãy mình vừa thực hiện lệnh <code>git commit -m "tên lời nhắn"</code> ko ? Vậy là bạn đã thực hiện xong commit đầu tiên, việc tiếp theo sẽ thực hành trên github.</li>
+</ul>
+<p><strong>2. Thao tác với Github:</strong></p>
+<ul>
+<li><strong>Git</strong> và <strong>Github</strong> là 2 thứ hoàn toàn khác nhau. Git là 1 DVCS như mình đã giới thiệu từ ban đầu. Còn Github là 1 dịch vụ cung cấp các repo online mà người dùng sử dụng để tạo các kho chứa của riêng mình.</li>
+<li>Đầu tiên, các bạn truy cập vào <a href="https://github.com">https://github.com</a> và đăng kí 1 tài khoản.</li>
+<li>Bước tiếp theo khá quan trọng, trên terminal các bạn thực hiện lệnh <code>ssh-keygen</code>, việc này sẽ tạo 1 <code>private key</code>, 1 <code>public key</code>, sau đó copy <code>public key</code> để chuẩn bị thực hiện bước tiếp theo (bước tạo ssh-key này bạn có thể xem phần hướng dẫn sử dụng git trên window)</li>
+</ul>
+<pre><code>╰─➤  ssh-keygen                                                   
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/phanhoang/.ssh/id_rsa): /home/phanhoang/.ssh/id_rsa_test
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/phanhoang/.ssh/id_rsa_test.
+Your public key has been saved in /home/phanhoang/.ssh/id_rsa_test.pub.
+The key fingerprint is:
+4a:8d:bc:ec:27:5a:c6:01:da:14:a6:61:57:7b:c3:f5 phanhoang@phanhoang-PC
+The key's randomart image is:
++--[ RSA 2048]----+
+|  o +..   .      |
+| . = . o . .     |
+|  . o . +   E    |
+|   + o + .       |
+|  . . = S        |
+|     + +         |
+|      B          |
+|     +. .        |
+|    ...o         |
++-----------------+
+(venv) ╭─phanhoang@phanhoang-PC ~  
+╰─➤  cat /home/phanhoang/.ssh/id_rsa_test.pub 
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC05XxMT7Nu9X//DrANSxMMP/HcWFD6ntBX0VkXqplIkq9BmHqQr4c6rclfI5P8A8ZMKaNHiH91OjdbJYqkYvW4tvvHl3qDVcc1/5q81iW3MZeCmCroa0Z7cTCD6eHVZcXoHGq/sZ2BBirBckdoKBb9/chJdEzvEPhpQ9ar3SiQNuOuVuiObkgg67sUuZj/2VazV9usVp962aSxrsnwEesTgnIqkLbErHCAaYgaPz4RsH+xYHwogRXF+PzAFF90ec0hPpJCcktKuaiP80JmMR3nPBgnFfu0/ZmgeO28FvA5nkxJTYN+4hQI4bEC6ZCums0MpX7wfSD/iKsRwTctOZMR phanhoang@phanhoang-PC
+</code></pre>
+
+<ul>
+<li>Sau khi đã copy key, trên tài khoản github, mọi người chọn <code>settings</code> &gt; <code>SSH and GPG keys</code> &gt; chọn <code>New SSH keys</code>. Dán key vừa copy vào <code>Key</code>, thêm <code>Title</code> và chọn <code>Add SSH key</code>. </li>
+</ul>
+<p><img alt="Add SSH key" src="http://i.imgur.com/9Q4AF9H.png" /></p>
+<ul>
+<li>Bước tiếp, trên github, các bạn tạo mới 1 <code>repository</code> ở góc trên cùng bên phải. Đặt tên repo, description, rồi chọn tạo mới repo:</li>
+</ul>
+<p><img alt="Create Repo" src="http://i.imgur.com/jm8M6Tw.png" /></p>
+<p><img alt="" src="http://i.imgur.com/pvE9BcY.png" /></p>
+<ul>
+<li>Ở đây có 2 tùy chọn. Thứ nhất là bạn đã có sẵn 1 thư mục trên máy là muốn link thư mục trên local đồng bộ với thư mục trên github, bạn thực hiện lệnh:'</li>
+</ul>
+<pre><code>git remote add origin `tên đường dẫn đến repo của bạn`
+</code></pre>
+
+<ul>
+<li>Hoặc đơn giản bạn chỉ muốn kéo repo đó về, thực hiện lệnh:</li>
+</ul>
+<pre><code>git clone `tên đường dẫn tới repo của bạn`
+</code></pre>
+
+<ul>
+<li>Ở đây để đơn giản, mình sẽ clone repo về máy:</li>
+</ul>
+<pre><code>(venv) ╭─phanhoang@phanhoang-PC ~
+╰─➤  git clone git@github.com:huyhoang17/test.git
+Cloning into 'test'...
+warning: You appear to have cloned an empty repository.
+Checking connectivity... done.
+(venv) ╭─phanhoang@phanhoang-PC ~
+╰─➤  ls | grep test
+test
+(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master› 
+╰─➤  cd test
+</code></pre>
+
+<ul>
+<li>Giờ cả repo trên local và trên github đều chưa có bất kì file nào. Ta tạo mới 1 file trên local rồi cũng thực hiện các thao tác cơ bản như ở trên: <code>git add 'tên file' và git commit -m 'tên lời nhắn'</code>:</li>
+</ul>
+<pre><code>(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master› 
+╰─➤  echo &quot;Hello Git, Github&quot; &gt;&gt; README.md
+(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master*› 
+╰─➤  ls
+README.md
+(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master*› 
+╰─➤  git add README.md 
+(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master*› 
+╰─➤  git commit -m &quot;add README.md&quot;
+[master (root-commit) 026a01e] add README.md
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master› 
+╰─➤  git status
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use &quot;git branch --unset-upstream&quot; to fixup)
+
+nothing to commit, working directory clean
+</code></pre>
+
+<ul>
+<li>Hiện tại repo trên máy mình đã có 1 file <code>README.md</code> nhưng bây giờ bạn thử truy cập repo đó trên github thì hoàn toàn chưa thấy file đó. Để thực hiện đẩy file sau khi đã commit lên github, ta thực hiện lệnh:</li>
+</ul>
+<pre><code>(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master› 
+╰─➤  git push origin master 
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 237 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:huyhoang17/test.git
+ * [new branch]      master -&gt; master
+</code></pre>
+
+<ul>
+<li><code>master</code> chính là tên nhánh ban đầu bạn làm việc. Ta sẽ bàn về việc tạo nhánh trong phần sau của hướng dẫn. Như bạn đã thấy, git đã thực hiện thành công việc đẩy file lên github. Bây giờ bạn thử truy cập lại repo trên Github mà xem, BINGO ...:</li>
+</ul>
+<p><img alt="BINGO !" src="http://i.imgur.com/PBbEJhc.png" /></p>
+<ul>
+<li>Như vậy bây giờ, thư mục trên máy và trên github đã được đồng bộ với nhau. Giả sử bây giờ mình tạo 1 file mới ngày trên github tên <code>abc.py</code>. Khi đó để cập nhật file đó xuống dưới local, bạn thực hiện lệnh:</li>
+</ul>
+<pre><code>(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master› 
+╰─➤  git pull
+Updating 026a01e..0e3215d
+Fast-forward
+ abc.py | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 abc.py
+(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master› 
+╰─➤  ls
+abc.py  README.md
+</code></pre>
+
+<ul>
+<li>Đó là 1 số các hướng dẫn cơ bản khi làm việc với git và các dịch vụ quản lí repo như github.</li>
+</ul>
+<hr />
+<h3 id="huong-dan-nop-bai-tap-qua-git-cho-hoc-vien-pyfml"><strong>Hướng dẫn nộp bài tập qua git cho học viên PyFML</strong></h3>
+<ul>
+<li>Tạo tài khoản gitlab ( gitlab cũng là 1 dịch vụ quản lí repo như github, nhưng cho phép tạo repo private miễn phí, bạn có thể xem thêm phần phụ lục ở cuối bài ):</li>
+<li>Thêm <code>SSH-KEY</code> trên tài khoản gitlab của bạn (tương tự như github ở bên trên).</li>
+<li>Clone project  (<strong>lưu ý là từ buổi học số 3, các bạn mới được set quyền truy cập vào project, khi đó mới tiến hành clone về được</strong>) :</li>
+</ul>
+<pre><code>git clone https://gitlab.com/pyfml/pyfml
+</code></pre>
+
+<ul>
+<li>Kiểm tra nhánh ( branch ):</li>
+</ul>
+<pre><code>(venv) ╭─phanhoang@phanhoang-PC ~/workspace/pyfml  ‹master› 
+╰─➤  ls
+01_lecture.rst  05_lecture.rst  09_lecture.rst  12_lecture.rst  FAQ.rst         lectures.rst  requirements-doc.txt     untitled.txt
+02_lecture.rst  06_lecture.rst  10_lecture.rst  conf.py         final-exam.rst  Makefile      requirements-freeze.txt  whatnext.rst
+03_lecture.rst  07_lecture.rst  11_flask        exercises       git.rst         nopbai.py     requirements.txt
+04_lecture.rst  08_lecture.rst  11_lecture.rst  exercises.rst   index.rst       README.rst    Resource
+(venv) ╭─phanhoang@phanhoang-PC ~/workspace/pyfml  ‹master› 
+╰─➤  git branch
+* master
+</code></pre>
+
+<p>Như bạn thấy, hiện tại chỉ có duy nhất 1 nhánh tên <code>master</code>. Sau khi clone về bạn tạo mới 1 nhánh trên repo của bạn bằng lệnh <code>git checkout -b 'tên nhánh'</code>:</p>
+<pre><code>(venv) ╭─phanhoang@phanhoang-PC ~/workspace/pyfml  ‹master› 
+╰─➤  git checkout -b hoang
+Switched to a new branch 'hoang'
+(venv) ╭─phanhoang@phanhoang-PC ~/workspace/pyfml  ‹hoang› 
+╰─➤  git branch
+* hoang
+  master
+</code></pre>
+
+<p>Hiện tại thì bạn đang làm việc trên nhánh <code>hoang</code>. Ví dụ bài tập tuần 3, bạn tạo mới 1 nhánh con tên <code>hoang_bai3</code> chẳng hạn, sau đó tạo mới 1 thư mục <code>hoang_ex3</code> chứa toàn bộ các file bài tập của tuần 3 (hiện tại bạn đang đứng trên branch <code>hoang_bai3</code>:</p>
+<pre><code>(venv) ╭─phanhoang@phanhoang-PC ~/workspace/pyfml  ‹hoang› 
+╰─➤  git checkout -b hoang_bai3
+Switched to a new branch 'hoang_bai3'
+(venv) ╭─phanhoang@phanhoang-PC ~/workspace/pyfml  ‹hoang_bai3› 
+╰─➤  git branch
+  hoang
+* hoang_bai3
+  master
+(venv) ╭─phanhoang@phanhoang-PC ~/workspace/pyfml  ‹hoang_bai3› 
+╰─➤  mkdir hoang_ex3
+</code></pre>
+
+<ul>
+<li>Để chuyển sang nhánh khác, thực hiện lệnh <code>git checkout 'tên nhánh'</code>:</li>
+</ul>
+<pre><code>(venv) ╭─phanhoang@phanhoang-PC ~/workspace/pyfml  ‹hoang_bai3› 
+╰─➤  git checkout hoang
+Switched to branch 'hoang'
+</code></pre>
+
+<ul>
+<li>Khi nộp bài tập, các bạn cũng thực hiện các lệnh <code>git add</code>, <code>git commit</code> trên branch bài tập tương ứng từng tuần (vd: hoang_bai3) và commit lên gitlab (lưu ý: tuyệt đối không push bài tập trên branch <code>master</code> ):</li>
+</ul>
+<pre><code>git push origin hoang_bai3
+</code></pre>
+
+<ul>
+<li>Thực hiện tạo Merge Request trên Gitlab. Chú ý chọn <code>Source branch</code> là <code>hoang_bai3</code>, <code>Target branch</code> là <code>hoang</code>. Assign lại cho các giảng viên và trợ giảng để review code của bạn.</li>
+</ul>
+<hr />
+<h3 id="phu-luc"><strong>Phụ lục</strong></h3>
+<ul>
+<li>
+<p>Git tutorial: <a href="https://git-scm.com/book/en/v2">git-scm</a></p>
+</li>
+<li>
+<p><a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/">How to add a new SSH key to your GitHub account</a></p>
+</li>
+<li>
+<p>Điểm khác nhau giữa Github và Gitlab:</p>
+<ul>
+<li>
+<p>Giống nhau: Cả hai đều là các dịch vụ quản lí repo ( thư mục chứa mã nguồn của bạn ), không giới hạn số lượng repo bạn tạo ra.</p>
+</li>
+<li>
+<p>Khác nhau: </p>
+<ul>
+<li>Gitlab cho phép bạn có thể tạo repo private mà không phải trả phí, với Github bạn sẽ phải trả phí khi muốn tạo 1 repo private.</li>
+<li>Gitlab cung cấp giao diện trực quan hơn, nhiều tùy chọn hơn, thuận tiện hơn trong việc review bài tập của học viên.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>pymi.vn</p>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
