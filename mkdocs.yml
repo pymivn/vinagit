@@ -1,1 +1,9 @@
-site_name: My Docs
+site_name: Sử dụng git cơ bản - Pymi.vn
+site_description: Hướng dẫn sử dụng Git cơ bản
+pages:
+    - Home: index.md
+    - Học Git:
+      - Học Git cơ bản: introduction_to_git.md
+      - Hướng dẫn sử dụng Git với Windows: introduction_to_git_GUI.md
+repo_url: https://github.com/pymivn/vinagit
+copyright: pymi.vn

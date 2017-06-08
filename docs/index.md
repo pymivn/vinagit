@@ -1,17 +1,25 @@
-# Welcome to MkDocs
+### Hướng dẫn cơ bản về git cho học viên PyFML
 
-For full documentation visit [mkdocs.org](http://mkdocs.org).
+---
 
-## Commands
+Hướng dẫn gồm 2 phần chính:
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
+#### [__Hướng dẫn Git cơ bản__](introduction_to_git.md)
 
-## Project layout
+* Giới thiệu , cài đặt và hướng dẫn 1 số thao tác cơ bản với __Git__
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+* Cách làm việc với 1 số dịch vụ quản lí mã nguồn online như: __Github__, __Gitlab__
+
+* Cách nộp bài tập qua Git cho học viên __PyFML__.
+
+#### [__Hướng dẫn Git trên Window__](introduction_to_git_GUI.md)
+
+* Hướng dẫn cài đặt, sử dụng __Git__ trên __Windows__ ( __GUI__, __Terminal__ ).
+
+---
+
+####Phụ lục
+
+* [Pymi on __Github__](https://github.com/pymivn)
+
+* [Pymi on __Slack__](https://pymi-slack.herokuapp.com/)
