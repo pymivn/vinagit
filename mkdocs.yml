@@ -1,1 +1,9 @@
-site_name: My Docs
+site_name: Git Pymi
+pages:
+    - Home: index.md
+    - Học Git:
+      - Học Git cơ bản: introduction_to_git.md
+      - Hướng dẫn sử dụng Git với Windows: introduction_to_git_GUI.md
+repo_url: http://pymi.vn/
+repo_name: Học Python
+copyright: pymi.vn
