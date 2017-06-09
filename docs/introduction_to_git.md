@@ -29,7 +29,7 @@ tags: git
       - Code ko được sao lưu và cập nhật thường xuyên khiến cho việc quay lại các phiên làm việc trước đó hết sức khó khăn
 
 - Và đó chính là các vấn đề mà git có thể giải quyết 1 cách đơn giản chỉ bằng 1 vài dòng lệnh !
- 
+
 ---
 
 ### __Tiến hành cài đặt git__
@@ -50,7 +50,7 @@ __2. Trên Window:__
 
 - Việc đầu tiên cần làm sau khi cài đặt git đó là thiết lập các thông số cấu hình ban đầu của git trên máy, bao gồm `username` và `email` của bạn. Trên terminal các bạn gõ lần lượt từng lệnh:
 
-``` 
+```
 git config --global user.name "Your name"
 git config --global user.email "youremail@gmail.com"
 ```
@@ -66,21 +66,21 @@ cd test_repo  # truy cập vào thư mục test_repo
 
 - Trong thư mục `test_repo`, bạn thực hiện lệnh:
 
-``` 
+```
 git init
 ```
 
 Lệnh này sẽ khởi tạo 1 thư mục `.git`bên trong thư mục làm việc cuả bạn, là nơi chứa các thiết lập về git cũng như thông tin về kho chứa. Bạn có thể thấy 1 thông báo rằng đã khởi tạo 1 kho chứa thành công
 
 ```
-(venv) ╭─phanhoang@phanhoang-PC ~/workspace  
+(venv) ╭─phanhoang@phanhoang-PC ~/workspace
 ╰─➤  mkdir test_repo
-(venv) ╭─phanhoang@phanhoang-PC ~/workspace  
-╰─➤  cd test_repo 
-(venv) ╭─phanhoang@phanhoang-PC ~/workspace/test_repo  
-╰─➤  git init   
+(venv) ╭─phanhoang@phanhoang-PC ~/workspace
+╰─➤  cd test_repo
+(venv) ╭─phanhoang@phanhoang-PC ~/workspace/test_repo
+╰─➤  git init
 Initialized empty Git repository in /home/phanhoang/workspace/test_repo/.git/
-(venv) ╭─phanhoang@phanhoang-PC ~/workspace/test_repo  ‹master› 
+(venv) ╭─phanhoang@phanhoang-PC ~/workspace/test_repo  ‹master›
 ╰─➤  ls -a
 .  ..  .git
 ```
@@ -88,9 +88,9 @@ Initialized empty Git repository in /home/phanhoang/workspace/test_repo/.git/
 - Giờ bạn sẽ tạo mới 1 file ( hoặc thư mục ) tùy ý và thực hiện lệnh `git status`
 
 ```
-(venv) ╭─phanhoang@phanhoang-PC ~/workspace/test_repo  ‹master› 
+(venv) ╭─phanhoang@phanhoang-PC ~/workspace/test_repo  ‹master›
 ╰─➤  touch README.md
-(venv) ╭─phanhoang@phanhoang-PC ~/workspace/test_repo  ‹master*› 
+(venv) ╭─phanhoang@phanhoang-PC ~/workspace/test_repo  ‹master*›
 ╰─➤  git status
 On branch master
 
@@ -107,9 +107,9 @@ nothing added to commit but untracked files present (use "git add" to track)
 - Như bạn có thể thấy, sau khi bạn tạo mới 1 file trên thư mục làm việc sẽ có 1 thông báo xuất ra màn hình báo `file chưa được theo dõi`( dòng README.md sẽ hiện màu đỏ ), giả sử bạn xóa file này đi thì git cũng không quan tâm. Hiểu đơn giản, git quản lí tập tin nên nếu bạn thay đổi hay tạo mới bất cứ 1 file ( hay thư mục ) mà chưa thông báo cho git thì mọi thay đổi trên file ( thư mục ) đó git sẽ chưa thể quản lí ( theo dõi ) được. Để cập nhật file ( thư mục ) đã được thay đổi, trên terminal các bạn thực  hiện lệnh `git add tên_file` , rồi `git status`:
 
 ```
-(venv) ╭─phanhoang@phanhoang-PC ~/workspace/test_repo  ‹master*› 
-╰─➤  git add README.md 
-(venv) ╭─phanhoang@phanhoang-PC ~/workspace/test_repo  ‹master*› 
+(venv) ╭─phanhoang@phanhoang-PC ~/workspace/test_repo  ‹master*›
+╰─➤  git add README.md
+(venv) ╭─phanhoang@phanhoang-PC ~/workspace/test_repo  ‹master*›
 ╰─➤  git status
 On branch master
 
@@ -124,12 +124,12 @@ Changes to be committed:
 - Bạn có để ý thấy điều gì ko? Git báo file đã được cập nhật và có 1 file mới `README.md`  màu xanh.  Tuy nhiên, khi thực hiện `git add tên_file`ta mới thông báo cho git là file đã đc cập nhật nhưng chưa hề được đánh dấu version ( hay các phiên làm việc ). Để làm được điều đó, ta thực hiện lệnh `git commit -m "tên lời nhắn"`:
 
 ```
-(venv) ╭─phanhoang@phanhoang-PC ~/workspace/test_repo  ‹master*› 
+(venv) ╭─phanhoang@phanhoang-PC ~/workspace/test_repo  ‹master*›
 ╰─➤  git commit -m 'add README.md'
 [master (root-commit) 43e1e93] add README.md
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 README.md
-(venv) ╭─phanhoang@phanhoang-PC ~/workspace/test_repo  ‹master› 
+(venv) ╭─phanhoang@phanhoang-PC ~/workspace/test_repo  ‹master›
 ╰─➤  git status
 On branch master
 nothing to commit, working directory clean
@@ -158,11 +158,11 @@ __2. Thao tác với Github:__
 - Bước tiếp theo khá quan trọng, trên terminal các bạn thực hiện lệnh `ssh-keygen`, việc này sẽ tạo 1 `private key`, 1 `public key`, sau đó copy `public key` để chuẩn bị thực hiện bước tiếp theo (bước tạo ssh-key này bạn có thể xem phần hướng dẫn sử dụng git trên window)
 
 ```
-╰─➤  ssh-keygen                                                   
+╰─➤  ssh-keygen
 Generating public/private rsa key pair.
 Enter file in which to save the key (/home/phanhoang/.ssh/id_rsa): /home/phanhoang/.ssh/id_rsa_test
-Enter passphrase (empty for no passphrase): 
-Enter same passphrase again: 
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
 Your identification has been saved in /home/phanhoang/.ssh/id_rsa_test.
 Your public key has been saved in /home/phanhoang/.ssh/id_rsa_test.pub.
 The key fingerprint is:
@@ -179,12 +179,12 @@ The key's randomart image is:
 |     +. .        |
 |    ...o         |
 +-----------------+
-(venv) ╭─phanhoang@phanhoang-PC ~  
-╰─➤  cat /home/phanhoang/.ssh/id_rsa_test.pub 
+(venv) ╭─phanhoang@phanhoang-PC ~
+╰─➤  cat /home/phanhoang/.ssh/id_rsa_test.pub
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC05XxMT7Nu9X//DrANSxMMP/HcWFD6ntBX0VkXqplIkq9BmHqQr4c6rclfI5P8A8ZMKaNHiH91OjdbJYqkYvW4tvvHl3qDVcc1/5q81iW3MZeCmCroa0Z7cTCD6eHVZcXoHGq/sZ2BBirBckdoKBb9/chJdEzvEPhpQ9ar3SiQNuOuVuiObkgg67sUuZj/2VazV9usVp962aSxrsnwEesTgnIqkLbErHCAaYgaPz4RsH+xYHwogRXF+PzAFF90ec0hPpJCcktKuaiP80JmMR3nPBgnFfu0/ZmgeO28FvA5nkxJTYN+4hQI4bEC6ZCums0MpX7wfSD/iKsRwTctOZMR phanhoang@phanhoang-PC
 ```
 
-- Sau khi đã copy key, trên tài khoản github, mọi người chọn `settings` > `SSH and GPG keys` > chọn `New SSH keys`. Dán key vừa copy vào `Key`, thêm `Title` và chọn `Add SSH key`. 
+- Sau khi đã copy key, trên tài khoản github, mọi người chọn `settings` > `SSH and GPG keys` > chọn `New SSH keys`. Dán key vừa copy vào `Key`, thêm `Title` và chọn `Add SSH key`.
 
 ![Add SSH key](http://i.imgur.com/9Q4AF9H.png)
 
@@ -217,26 +217,26 @@ Checking connectivity... done.
 (venv) ╭─phanhoang@phanhoang-PC ~
 ╰─➤  ls | grep test
 test
-(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master› 
+(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master›
 ╰─➤  cd test
 ```
 
 - Giờ cả repo trên local và trên github đều chưa có bất kì file nào. Ta tạo mới 1 file trên local rồi cũng thực hiện các thao tác cơ bản như ở trên: `git add 'tên file' và git commit -m 'tên lời nhắn'`:
 
 ```
-(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master› 
+(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master›
 ╰─➤  echo "Hello Git, Github" >> README.md
-(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master*› 
+(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master*›
 ╰─➤  ls
 README.md
-(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master*› 
-╰─➤  git add README.md 
-(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master*› 
+(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master*›
+╰─➤  git add README.md
+(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master*›
 ╰─➤  git commit -m "add README.md"
 [master (root-commit) 026a01e] add README.md
  1 file changed, 1 insertion(+)
  create mode 100644 README.md
-(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master› 
+(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master›
 ╰─➤  git status
 On branch master
 Your branch is based on 'origin/master', but the upstream is gone.
@@ -248,8 +248,8 @@ nothing to commit, working directory clean
 - Hiện tại repo trên máy mình đã có 1 file `README.md` nhưng bây giờ bạn thử truy cập repo đó trên github thì hoàn toàn chưa thấy file đó. Để thực hiện đẩy file sau khi đã commit lên github, ta thực hiện lệnh:
 
 ```
-(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master› 
-╰─➤  git push origin master 
+(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master›
+╰─➤  git push origin master
 Counting objects: 3, done.
 Writing objects: 100% (3/3), 237 bytes | 0 bytes/s, done.
 Total 3 (delta 0), reused 0 (delta 0)
@@ -264,88 +264,19 @@ To git@github.com:huyhoang17/test.git
 - Như vậy bây giờ, thư mục trên máy và trên github đã được đồng bộ với nhau. Giả sử bây giờ mình tạo 1 file mới ngày trên github tên `abc.py`. Khi đó để cập nhật file đó xuống dưới local, bạn thực hiện lệnh:
 
 ```
-(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master› 
+(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master›
 ╰─➤  git pull
 Updating 026a01e..0e3215d
 Fast-forward
  abc.py | 1 +
  1 file changed, 1 insertion(+)
  create mode 100644 abc.py
-(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master› 
+(venv) ╭─phanhoang@phanhoang-PC ~/test  ‹master›
 ╰─➤  ls
 abc.py  README.md
 ```
 
 - Đó là 1 số các hướng dẫn cơ bản khi làm việc với git và các dịch vụ quản lí repo như github.
-
----
-
-### __Hướng dẫn nộp bài tập qua git cho học viên PyFML__
-
-- Tạo tài khoản gitlab ( gitlab cũng là 1 dịch vụ quản lí repo như github, nhưng cho phép tạo repo private miễn phí, bạn có thể xem thêm phần phụ lục ở cuối bài ):
-- Thêm `SSH-KEY` trên tài khoản gitlab của bạn (tương tự như github ở bên trên).
-- Clone project  (__lưu ý là từ buổi học số 3, các bạn mới được set quyền truy cập vào project, khi đó mới tiến hành clone về được__) :
-
-```
-git clone https://gitlab.com/pyfml/pyfml
-```
-
-- Kiểm tra nhánh ( branch ):
-
-```
-(venv) ╭─phanhoang@phanhoang-PC ~/workspace/pyfml  ‹master› 
-╰─➤  ls
-01_lecture.rst  05_lecture.rst  09_lecture.rst  12_lecture.rst  FAQ.rst         lectures.rst  requirements-doc.txt     untitled.txt
-02_lecture.rst  06_lecture.rst  10_lecture.rst  conf.py         final-exam.rst  Makefile      requirements-freeze.txt  whatnext.rst
-03_lecture.rst  07_lecture.rst  11_flask        exercises       git.rst         nopbai.py     requirements.txt
-04_lecture.rst  08_lecture.rst  11_lecture.rst  exercises.rst   index.rst       README.rst    Resource
-(venv) ╭─phanhoang@phanhoang-PC ~/workspace/pyfml  ‹master› 
-╰─➤  git branch
-* master
-```
-
-Như bạn thấy, hiện tại chỉ có duy nhất 1 nhánh tên `master`. Sau khi clone về bạn tạo mới 1 nhánh trên repo của bạn bằng lệnh `git checkout -b 'tên nhánh'`:
-
-```
-(venv) ╭─phanhoang@phanhoang-PC ~/workspace/pyfml  ‹master› 
-╰─➤  git checkout -b hoang
-Switched to a new branch 'hoang'
-(venv) ╭─phanhoang@phanhoang-PC ~/workspace/pyfml  ‹hoang› 
-╰─➤  git branch
-* hoang
-  master
-```
-
-Hiện tại thì bạn đang làm việc trên nhánh `hoang`. Ví dụ bài tập tuần 3, bạn tạo mới 1 nhánh con tên `hoang_bai3` chẳng hạn, sau đó tạo mới 1 thư mục `hoang_ex3` chứa toàn bộ các file bài tập của tuần 3 (hiện tại bạn đang đứng trên branch `hoang_bai3`:
-
-```
-(venv) ╭─phanhoang@phanhoang-PC ~/workspace/pyfml  ‹hoang› 
-╰─➤  git checkout -b hoang_bai3
-Switched to a new branch 'hoang_bai3'
-(venv) ╭─phanhoang@phanhoang-PC ~/workspace/pyfml  ‹hoang_bai3› 
-╰─➤  git branch
-  hoang
-* hoang_bai3
-  master
-(venv) ╭─phanhoang@phanhoang-PC ~/workspace/pyfml  ‹hoang_bai3› 
-╰─➤  mkdir hoang_ex3
-```
-
-- Để chuyển sang nhánh khác, thực hiện lệnh `git checkout 'tên nhánh'`:
-
-```
-(venv) ╭─phanhoang@phanhoang-PC ~/workspace/pyfml  ‹hoang_bai3› 
-╰─➤  git checkout hoang
-Switched to branch 'hoang'
-```
-
-- Khi nộp bài tập, các bạn cũng thực hiện các lệnh `git add`, `git commit` trên branch bài tập tương ứng từng tuần (vd: hoang_bai3) và commit lên gitlab (lưu ý: tuyệt đối không push bài tập trên branch `master` ):
-
-```
-git push origin hoang_bai3
-```
-
-- Thực hiện tạo Merge Request trên Gitlab. Chú ý chọn `Source branch` là `hoang_bai3`, `Target branch` là `hoang`. Assign lại cho các giảng viên và trợ giảng để review code của bạn.
 
 ---
 
@@ -358,7 +289,7 @@ git push origin hoang_bai3
 - Điểm khác nhau giữa Github và Gitlab:
 
     - Giống nhau: Cả hai đều là các dịch vụ quản lí repo ( thư mục chứa mã nguồn của bạn ), không giới hạn số lượng repo bạn tạo ra.
-  
-    - Khác nhau: 
+
+    - Khác nhau:
         - Gitlab cho phép bạn có thể tạo repo private mà không phải trả phí, với Github bạn sẽ phải trả phí khi muốn tạo 1 repo private.
         - Gitlab cung cấp giao diện trực quan hơn, nhiều tùy chọn hơn, thuận tiện hơn trong việc review bài tập của học viên.
